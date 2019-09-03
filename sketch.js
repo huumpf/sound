@@ -10,18 +10,8 @@ let ypos_inc = 60;
 
 function setup() {
 
-	// graphics stuff:
 	createCanvas(window.innerWidth, window.innerHeight);
 	background(50);
-	// fill(0, 0, 0, 255);
-	// instructions:
-	// textSize(32);
-	// textAlign(CENTER);
-  // text("Was willst du, du Otto?", width / 2, height / 2);
-	// myRec.onResult = showResult;
-	// myRec.start();
-
-  // myVoice.speak("Was guckst du so dumm du Otto?");
   myVoice.setPitch( 1 );
 
   // button:
@@ -35,6 +25,15 @@ function setup() {
   ypos += ypos_inc;
 
   let coolStory_btn = createButton('Krasse Geschichte').position(20, ypos).addClass( 'btn' ).mousePressed(sayCoolStory);
+  ypos += ypos_inc;
+
+  let einzigartig_btn = createButton('Jeder ist einzigartig').position(20, ypos).addClass( 'btn' ).mousePressed(sayEinzigartig);
+  ypos += ypos_inc;
+
+  let urteil_btn = createButton('Urteile nicht über mich').position(20, ypos).addClass( 'btn' ).mousePressed(sayUrteil);
+  ypos += ypos_inc;
+
+  let weg_btn = createButton('Eigener Weg').position(20, ypos).addClass( 'btn' ).mousePressed(sayWeg);
   ypos += ypos_inc;
 
 }
@@ -55,14 +54,29 @@ function sayCoolStory() {
   myVoice.speak("Wow, das ist aber eine krasse Geschichte");
 }
 
-    // function showResult() {
-    // 	if (myRec.resultValue === true) {
-    // 		background(255);
-    // 		text(myRec.resultString, width / 2, height / 2);
-    //     //myVoice.interrupt = checkbox.elt.checked;
-    // 		myVoice.speak(myRec.resultString); // debug printer for voice options
-    //     console.log(myRec.resultString);
-    //     myVoice.setPitch( 1 );
-    //     myVoice.speak("Immer dieses rumgeheule! Gleich scheppert's hier im Karton!");
-    // 	}
-    // }
+function sayLaecheln() {
+  myVoice.speak("Der kürzeste Weg zwischen 2 Menschen ist ein Lächeln");
+}
+
+function sayEinzigartig() {
+  myVoice.speak("Kein Mensch ist perfekt, aber jeder ist auf seine Weise einzigartig.");
+}
+
+function sayUrteil() {
+  myVoice.speak("Bevor du über mich und mein Leben urteilst, zieh meine Schuhe an und geh meinen Weg.");
+}
+
+function sayWeg() {
+  myVoice.speak("Nur wer seinen eigenen Weg geht, kann Spuren hinterlassen.");
+}
+
+// let texts = {};
+
+// function makeButton( name, text ) {
+//   let btn = createButton(name).position(20, ypos).addClass( 'btn' ).mousePressed(texts.name);
+//   ypos += ypos_inc;
+
+//   texts.prototype.name = function(
+//     myVoice.speak(text);
+//   }
+// }
