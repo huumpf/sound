@@ -36,6 +36,15 @@ function setup() {
   let weg_btn = createButton('Eigener Weg').position(20, ypos).addClass( 'btn' ).mousePressed(sayWeg);
   ypos += ypos_inc;
 
+  let spiegel_btn = createButton('Wie ein Spiegel').position(20, ypos).addClass( 'btn' ).mousePressed(saySpiegel);
+  ypos += ypos_inc;
+
+  let wunder_btn = createButton('Viele kleine Wunder').position(20, ypos).addClass( 'btn' ).mousePressed(sayWunder);
+  ypos += ypos_inc;
+
+  let meilen_btn = createButton('1000 Meilen kleiner Schritt').position(20, ypos).addClass( 'btn' ).mousePressed(sayMeilen);
+  ypos += ypos_inc;
+
 }
 
 function sayNein() {
@@ -69,6 +78,20 @@ function sayUrteil() {
 function sayWeg() {
   myVoice.speak("Nur wer seinen eigenen Weg geht, kann Spuren hinterlassen.");
 }
+
+function saySpiegel() {
+  myVoice.speak("Das Leben ist wie ein Spiegel: Lächelt man hinein, lächelt es zurück!");
+}
+
+function sayWunder() {
+  myVoice.speak("Warte nicht auf das große Wunder, sonst verpasst du die vielen kleinen.");
+}
+
+function sayMeilen() {
+  myVoice.speak("Selbst ein Weg von 1000 Meilen beginnt mit einem Schritt.");
+}
+
+
 
 // let texts = {};
 
