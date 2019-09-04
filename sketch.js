@@ -16,7 +16,7 @@ function setup() {
 	instructions:
 	textSize(32);
 	textAlign(CENTER);
-  text("Was willst du, du Otto?", width / 2, height / 2);
+  text("Was guckst du so dumm, du Otto?", width / 2, height / 2);
 	myRec.onResult = showResult;
 	myRec.start();
 
@@ -32,7 +32,7 @@ function setup() {
       myVoice.speak(myRec.resultString); // debug printer for voice options
       console.log(myRec.resultString);
       myVoice.setPitch( 1 );
-      myVoice.speak("Immer dieses rumgeheule! Gleich scheppert's hier! Aber gewaltig!");
+      myVoice.speak("Immer dieses rumgeheule!");
     }
   }
 }
