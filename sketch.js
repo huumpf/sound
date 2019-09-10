@@ -1,6 +1,8 @@
 var myRec = new p5.SpeechRec(); // new P5.SpeechRec object
 var myVoice = new p5.Speech('Google Deutsch'); // new P5.Speech object
 
+var schimpf = ["Ekelpaket", "Halunke", "Hanswurst", "Holzkopf", "Lump", "Schlawiner", "Schuft", "Schurke", "Taugenichts", "Tunichtgut", "Tölpel"];
+
 myRec.continuous = false; // do continuous recognition
 // myRec.interimResults = true; // allow partial recognition (faster, less accurate)
 
@@ -43,6 +45,9 @@ function setup() {
   ypos += ypos_inc;
 
   let meilen_btn = createButton('1000 Meilen kleiner Schritt').position(20, ypos).addClass( 'btn' ).mousePressed(sayMeilen);
+  ypos += ypos_inc;
+
+  let schimpfwort_btn = createButton('Beschimpfen').position(20, ypos).addClass( 'btn' ).mousePressed(saySchimpf);
   ypos += ypos_inc;
 
 }
@@ -91,15 +96,12 @@ function sayMeilen() {
   myVoice.speak("Selbst ein Weg von 1000 Meilen beginnt mit einem Schritt.");
 }
 
+function saySchimpf() {
+  let schimpf = getSchimpfwort();
+  myVoice.speak(`Du ${schimpf}`);
+}
 
-
-// let texts = {};
-
-// function makeButton( name, text ) {
-//   let btn = createButton(name).position(20, ypos).addClass( 'btn' ).mousePressed(texts.name);
-//   ypos += ypos_inc;
-
-//   texts.prototype.name = function(
-//     myVoice.speak(text);
-//   }
-// }
+function getSchimpfwort() {
+  let rand = floor( random(0, schimpf.length) );
+  return schimpf[rand];
+}
