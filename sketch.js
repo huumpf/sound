@@ -51,6 +51,7 @@ function setup() {
   ypos += ypos_inc;
 
   let frohes_btn = addButton('Frohes Neues', 20, ypos, sayFrohesNeues);
+  ypos += ypos_inc;
 }
 
 function addButton(title, posX, posY, action) {
