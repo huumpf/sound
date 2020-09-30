@@ -17,39 +17,44 @@ function setup() {
   myVoice.setPitch( 1 );
 
   // button:
-  let ja_btn = createButton('Nein').position(20, ypos).addClass( 'btn' ).mousePressed(sayNein);
+  let ja_btn = addButton('Nein', 20, ypos, sayNein);
   ypos += ypos_inc;
   // button:
-  let nein_btn = createButton('Ja').position(20, ypos).addClass( 'btn' ).mousePressed(sayJa);
+  let nein_btn = addButton('Ja', 20, ypos, sayJa);
   ypos += ypos_inc;
 
-  let brat_btn = createButton('Brat mir nen Storch').position(20, ypos).addClass( 'btn' ).mousePressed(sayBrat);
+  let brat_btn =   addButton('Brat mir nen Storch', 20, ypos, sayBrat);
   ypos += ypos_inc;
 
-  let coolStory_btn = createButton('Krasse Geschichte').position(20, ypos).addClass( 'btn' ).mousePressed(sayCoolStory);
+  let coolStory_btn = addButton('Krasse Geschichte', 20, ypos, sayCoolStory);
   ypos += ypos_inc;
 
-  let einzigartig_btn = createButton('Jeder ist einzigartig').position(20, ypos).addClass( 'btn' ).mousePressed(sayEinzigartig);
+  let einzigartig_btn = addButton('Jeder ist einzigartig', 20, ypos, sayEinzigartig);
   ypos += ypos_inc;
 
-  let urteil_btn = createButton('Urteile nicht über mich').position(20, ypos).addClass( 'btn' ).mousePressed(sayUrteil);
+  let urteil_btn = addButton('Urteile nicht über mich', 20, ypos, sayUrteil);
   ypos += ypos_inc;
 
-  let weg_btn = createButton('Eigener Weg').position(20, ypos).addClass( 'btn' ).mousePressed(sayWeg);
+  let weg_btn = addButton('Eigener Weg', 20, ypos, sayWeg);
   ypos += ypos_inc;
 
-  let spiegel_btn = createButton('Wie ein Spiegel').position(20, ypos).addClass( 'btn' ).mousePressed(saySpiegel);
+  let spiegel_btn = addButton('Wie ein Spiegel', 20, ypos, saySpiegel);
   ypos += ypos_inc;
 
-  let wunder_btn = createButton('Viele kleine Wunder').position(20, ypos).addClass( 'btn' ).mousePressed(sayWunder);
+  let wunder_btn = addButton('Viele kleine Wunder', 20, ypos, sayWunder);
   ypos += ypos_inc;
 
-  let meilen_btn = createButton('1000 Meilen kleiner Schritt').position(20, ypos).addClass( 'btn' ).mousePressed(sayMeilen);
+  let meilen_btn = addButton('1000 Meilen kleiner Schritt', 20, ypos, sayMeilen);
   ypos += ypos_inc;
 
-  let schimpfwort_btn = createButton('Beschimpfen').position(20, ypos).addClass( 'btn' ).mousePressed(saySchimpf);
+  let schimpfwort_btn = addButton('Beschimpfen', 20, ypos, saySchimpf);
   ypos += ypos_inc;
 
+  let frohes_btn = addButton('Frohes Neues', 20, ypos, sayFrohesNeues);
+}
+
+function addButton(title, posX, posY, action) {
+  return createButton(title).position(posX, posY).addClass('btn').mousePressed(action);
 }
 
 function sayNein() {
@@ -94,6 +99,10 @@ function sayWunder() {
 
 function sayMeilen() {
   myVoice.speak("Selbst ein Weg von 1000 Meilen beginnt mit einem Schritt.");
+}
+
+function sayFrohesNeues() {
+  myVoice.speak('Frohes Neues!');
 }
 
 function saySchimpf() {
